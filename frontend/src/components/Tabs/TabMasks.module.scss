@@ -1,0 +1,199 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.tabContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.inventoryPanel {
+  @include hud-panel($border-hud, $bg-panel);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+
+  @include mobile {
+    padding: 14px;
+  }
+}
+
+.panelTitle {
+  font-family: $font-hud;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $text-primary;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+// Table view for Desktop screens
+.desktopTableWrapper {
+  width: 100%;
+  overflow-x: hidden;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.masksTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+
+  th, td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid $border-dark;
+    word-break: break-word;
+  }
+
+  th {
+    font-family: $font-hud;
+    color: $text-secondary;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  tr:hover td {
+    background: rgba(16, 185, 129, 0.04);
+  }
+}
+
+// Mobile Card Grid View (Zero horizontal scroll)
+.mobileCardsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.maskCard {
+  @include hud-panel($border-dark, rgba(0, 0, 0, 0.4));
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+
+  &.equipped {
+    border-color: rgba(16, 185, 129, 0.4);
+    background: rgba(16, 185, 129, 0.06);
+  }
+}
+
+.maskCardHeader {
+  @include flex-between;
+}
+
+.maskName {
+  font-family: $font-hud;
+  font-size: 1rem;
+  font-weight: bold;
+  color: $text-primary;
+}
+
+.maskStatsRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  font-size: 0.8rem;
+  color: $text-secondary;
+}
+
+.rankBadge {
+  font-family: $font-hud;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  &.rumor { background: rgba(16, 185, 129, 0.15); color: $matrix-green; border: 1px solid rgba(16, 185, 129, 0.3); }
+  &.lenda { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+  &.mito { background: rgba(168, 85, 247, 0.15); color: $purple-glow; border: 1px solid rgba(168, 85, 247, 0.3); }
+  &.saga { background: rgba(244, 63, 94, 0.15); color: #f43f5e; border: 1px solid rgba(244, 63, 94, 0.3); }
+}
+
+.equipBtn {
+  @include hud-button($steel-light, rgba(30, 41, 59, 0.6), $border-dark);
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  min-height: 36px;
+}
+
+.equippedText {
+  font-family: $font-hud;
+  color: $matrix-green;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.rotationCard {
+  @include hud-panel($border-hud, rgba(16, 185, 129, 0.08));
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}
+
+.rotationInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rotationTitle {
+  font-family: $font-hud;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: $text-primary;
+}
+
+.rankPeriodsList {
+  display: flex;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: $text-secondary;
+  flex-wrap: wrap;
+}
+
+.rotateBtn {
+  @include hud-button($matrix-green, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.4));
+  padding: 12px 20px;
+  font-size: 0.88rem;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.nucleiControls {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.smallBtn {
+  @include hud-button($steel-light, rgba(30, 41, 59, 0.5), $border-dark);
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  min-height: 36px;
+}

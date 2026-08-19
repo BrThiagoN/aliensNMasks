@@ -1,0 +1,128 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.lobbyContainer {
+  min-height: 80vh;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.lobbyCard {
+  @include hud-panel(rgba(148, 163, 184, 0.3), $bg-panel);
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+
+  @include mobile {
+    padding: 20px 16px;
+  }
+}
+
+.titleBlock {
+  text-align: center;
+  width: 100%;
+}
+
+.title {
+  font-family: $font-hud;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: $text-primary;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
+
+.subtitle {
+  color: $steel-mid;
+  font-size: 0.85rem;
+}
+
+.modeToggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid $steel-border;
+  width: 100%;
+}
+
+.toggleBtn {
+  padding: 10px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: $steel-mid;
+  font-family: $font-hud;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s;
+  width: 100%;
+
+  &.active {
+    background: rgba(16, 185, 129, 0.15);
+    color: $matrix-green;
+    border-color: rgba(16, 185, 129, 0.4);
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.label {
+  font-family: $font-hud;
+  font-size: 0.78rem;
+  color: $steel-mid;
+  text-transform: uppercase;
+}
+
+.input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid $steel-border;
+  border-radius: 4px;
+  padding: 12px;
+  color: $text-primary;
+  font-family: $font-hud;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: $matrix-green;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
+  }
+}
+
+.actionBtn {
+  @include hud-button($matrix-green, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.4));
+  width: 100%;
+  padding: 14px;
+  font-size: 0.95rem;
+  margin-top: 8px;
+}
+
+.masterBtn {
+  @include hud-button($steel-light, rgba(30, 41, 59, 0.6), rgba(148, 163, 184, 0.4));
+  width: 100%;
+  padding: 14px;
+  font-size: 0.95rem;
+}

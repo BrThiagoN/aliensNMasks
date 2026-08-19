@@ -1,0 +1,163 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.drawerOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 380px;
+  background: $bg-panel;
+  border-left: 1px solid $border-hud-strong;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.8);
+  z-index: 950;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+.header {
+  @include flex-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $border-dark;
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  font-family: $font-hud;
+  font-size: 1.05rem;
+  color: $cyan-glow;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subtitle {
+  font-family: $font-hud;
+  font-size: 0.72rem;
+  color: $text-secondary;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.clearBtn {
+  background: rgba(244, 63, 94, 0.15);
+  border: 1px solid rgba(244, 63, 94, 0.4);
+  color: #f43f5e;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-family: $font-hud;
+  font-size: 0.72rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(244, 63, 94, 0.3);
+  }
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: $text-secondary;
+  cursor: pointer;
+
+  &:hover {
+    color: $crimson-glow;
+  }
+}
+
+.feedList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 4px;
+}
+
+.feedItem {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid $border-dark;
+  border-left: 3px solid $cyan-glow;
+  border-radius: 4px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &.masterRoll {
+    border-left-color: $amber-glow;
+  }
+}
+
+.itemHeader {
+  @include flex-between;
+  font-family: $font-hud;
+  font-size: 0.75rem;
+  color: $text-secondary;
+}
+
+.agentName {
+  color: $cyan-glow;
+  font-weight: bold;
+}
+
+.time {
+  color: $text-muted;
+}
+
+.itemResultRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.diceType {
+  font-family: $font-hud;
+  font-size: 0.85rem;
+  color: $text-primary;
+}
+
+.resultBadge {
+  font-family: $font-hud;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $emerald-glow;
+}
+
+.detail {
+  font-size: 0.8rem;
+  color: $text-secondary;
+}

@@ -1,0 +1,56 @@
+MIT License
+
+Copyright (c) 2026 Thiago Nascimento
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+CLÁUSULA DE PROPRIEDADE INTELECTUAL E DIREITOS AUTORAIS — UNIVERSO "MÁSCARAS E ALIENS"
+================================================================================
+
+1. ESCOPO DA LICENÇA DE SOFTWARE:
+   A licença MIT acima aplica-se ESTRITAMENTE à infraestrutura de código-fonte
+   aberto (código TypeScript, scripts Node.js/Go, componentes React e rotinas de
+   migração técnica).
+
+2. RESERVA INTEGRAL DE DIREITOS DO UNIVERSO E LORE (ALL RIGHTS RESERVED):
+   TODOS os direitos autorais, marcas conceituais e propriedade intelectual
+   relacionados ao universo ficcional e sistema de RPG "Máscaras e Aliens"
+   pertencem EXCLUSIVAMENTE ao autor (Thiago Nascimento), incluindo, mas não se
+   limitando a:
+   
+   a) LORE & NARRATIVA: Textos de ambientação, história, facções, conceitos cósmicos,
+      mitologia, descrições ficcionais e documentos de apoio (como CLAUDE.md, APIs.md e tabelas).
+   b) PERSONAGENS: Nomes, identidades, biografias, conceitos de agentes e mestres
+      (ex: "Mestre Oráculo", "Agente Kael" e quaisquer outros personagens).
+   c) ITENS & MÁSCARAS: Nomes, poderes, conceitos, descrições e propriedades de todas
+      as Máscaras (ex: "Máscara de Wendigo", "Máscara Médica Biomecânica", "Máscara do Vazio Gravitacional", etc.),
+      Núcleos Alienígenas, artefatos, consumíveis, equipamentos e armas.
+   d) MECÂNICAS & SISTEMA DE REGRAS AUTORAL: Terminologias proprietárias, sistemas de
+      Pontos de Ação (PA), Gestão de ATP, Semestres Concluídos (SC), Trava do Wendigo,
+      Regras de Imprevisibilidade de Núcleos (taxa 10:1), Matrizes de Artes Marciais
+      e mecânicas de Degradação/Recuperação de Sanidade e Marcas de Dor.
+   e) ATIVOS VISUAIS: Ilustrações, artes conceituais, retratos, ícones e design de
+      interfaces inclusos no projeto.
+
+3. RESTRIÇÕES DE USO:
+   É expressamente PROIBIDA a exploração comercial, reprodução não autorizada,
+   publicação, venda, distribuição ou criação de obras derivadas baseadas no universo,
+   lore, personagens, itens e mecânicas narrativas de "Máscaras e Aliens" sem
+   autorização prévia, expressa e por escrito do autor.

@@ -1,0 +1,159 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(5, 8, 12, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modalContent {
+  @include hud-panel($cyan-glow, rgba(0, 240, 255, 0.15));
+  width: 100%;
+  max-width: 520px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  overflow: hidden;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  @include mobile {
+    padding: 16px;
+    max-height: 95vh;
+    border-radius: 12px;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: $text-secondary;
+  cursor: pointer;
+  font-size: 1.2rem;
+
+  &:hover {
+    color: $crimson-glow;
+  }
+}
+
+.title {
+  font-family: $font-hud;
+  font-size: 1.4rem;
+  color: $cyan-glow;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.diceGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+
+  @include mobile {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.diceBtn {
+  @include hud-button($cyan-glow, rgba(0, 240, 255, 0.1));
+  padding: 12px 6px;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &.active {
+    background: rgba(0, 240, 255, 0.3);
+    border-color: $cyan-glow;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+  }
+}
+
+.diceArena {
+  min-height: 160px;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, rgba(0, 0, 0, 0.6) 80%);
+  border: 1px dashed $border-hud-strong;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+}
+
+.rollingDice {
+  font-size: 4rem;
+  font-family: $font-hud;
+  font-weight: 900;
+  color: $cyan-glow;
+  text-shadow: 0 0 25px $cyan-glow, 0 0 50px $cyan-dark;
+  animation: pulseDice 0.2s infinite alternate;
+}
+
+@keyframes pulseDice {
+  0% { transform: scale(0.9) rotate(-5deg); }
+  100% { transform: scale(1.1) rotate(5deg); }
+}
+
+.resultValue {
+  font-size: 4.5rem;
+  font-family: $font-hud;
+  font-weight: 900;
+  color: $emerald-glow;
+  text-shadow: 0 0 20px $emerald-glow;
+}
+
+.resultLabel {
+  font-family: $font-hud;
+  font-size: 0.9rem;
+  color: $text-secondary;
+  margin-top: 4px;
+}
+
+.modifierRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.modLabel {
+  font-family: $font-hud;
+  font-size: 0.9rem;
+  color: $text-secondary;
+}
+
+.modInput {
+  width: 70px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid $border-hud;
+  border-radius: 4px;
+  padding: 8px;
+  color: $text-primary;
+  font-family: $font-hud;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.rollTriggerBtn {
+  @include hud-button($emerald-glow, rgba(0, 255, 157, 0.2));
+  padding: 14px;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}

@@ -1,0 +1,70 @@
+// Y2K Metallic Steel & Toned Matrix Green Theme Variables
+
+// Base Backgrounds (Gunmetal & Charcoal Steel)
+$bg-main: #0b0e11;
+$bg-panel: #12161a;
+$bg-panel-hover: #1a2026;
+$bg-panel-active: #222a33;
+$bg-card: #151b21;
+$grimoire-card: #12161a;
+$vellum-dark: #0b0e11;
+
+// Toned Green Accents (Acid/Matrix Green - Controlled & Non-blinding)
+$matrix-green: #10b981;
+$matrix-green-glow: #059669;
+$matrix-green-dark: #022c22;
+
+$emerald-glow: #10b981;
+$emerald-dark: #047857;
+$slime-green: #10b981;
+$slime-dark: #064e3b;
+
+// Metallic Steel & Chrome Tones
+$steel-light: #e2e8f0;       // Chrome highlight
+$steel-mid: #94a3b8;         // Steel gray text & icons
+$steel-dark: #334155;        // Brushed gunmetal
+$steel-border: #1e293b;
+
+$weathered-gold: #94a3b8;    // Map to chrome silver
+$amber-glow: #38bdf8;        // Cyber blue accent
+$amber-dark: #0369a1;
+
+$dried-blood: #10b981;       // Map old red to controlled green
+$blood-glow: #10b981;
+$blood-crimson: #059669;
+$blood-dark: #022c22;
+$crimson-glow: #f43f5e;
+$crimson-dark: #881337;
+
+$purple-glow: #a855f7;
+$eldritch-purple: #7e22ce;
+
+// Aliases
+$cyan-glow: $matrix-green;
+$cyan-dark: $matrix-green-glow;
+$parchment-bone: #e2e8f0;
+
+// Text Colors
+$text-primary: #f1f5f9;      // Crisp chrome white
+$text-secondary: #94a3b8;    // Steel gray
+$text-muted: #475569;        // Muted gunmetal
+
+// Metallic Borders & Bevels
+$border-hud: rgba(148, 163, 184, 0.2);
+$border-hud-strong: rgba(16, 185, 129, 0.4);
+$border-filigree: rgba(148, 163, 184, 0.25);
+$border-gold: rgba(148, 163, 184, 0.35);
+$border-dark: #1e293b;
+$border-muted: #1e293b;
+$border-eldritch: rgba(16, 185, 129, 0.3);
+
+// Fonts
+$font-hud: 'Consolas', 'Courier Prime', monospace;
+$font-gothic: 'Consolas', 'Courier Prime', monospace;
+$font-display: 'Inter', system-ui, sans-serif;
+$font-journal: 'Consolas', 'Courier Prime', monospace;
+$font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+// Breakpoints
+$breakpoint-mobile: 768px;
+$breakpoint-desktop: 1024px;

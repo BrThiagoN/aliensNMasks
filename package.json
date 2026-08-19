@@ -1,0 +1,20 @@
+{
+  "name": "aliens-n-masks",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "db:migrate": "node scripts/migrate.js",
+    "build": "node scripts/migrate.js && npm run build --prefix frontend",
+    "build:frontend": "npm run build --prefix frontend",
+    "dev:frontend": "npm run dev --prefix frontend"
+  },
+  "dependencies": {
+    "@supabase/server": "^1.4.1",
+    "@supabase/supabase-js": "^2.112.3",
+    "dotenv": "^16.4.7",
+    "pg": "^8.13.3"
+  },
+  "devDependencies": {
+    "supabase": "^2.114.0"
+  }
+}

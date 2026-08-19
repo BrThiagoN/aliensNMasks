@@ -1,0 +1,257 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.header {
+  @include hud-panel($border-hud, rgba(16, 185, 129, 0.05));
+  padding: 10px 16px;
+  margin: 0 auto 16px auto;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 700;
+
+  @include mobile {
+    padding: 8px 10px;
+    margin-bottom: 12px;
+  }
+}
+
+.headerContainer {
+  @include flex-between;
+  gap: 12px;
+  width: 100%;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+}
+
+.agentInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #334155 0%, $bg-panel 100%);
+  border: 2px solid $matrix-green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-hud;
+  font-weight: bold;
+  color: $matrix-green;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+  overflow: hidden;
+
+  @include mobile {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+}
+
+.nameBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.agentName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: $text-primary;
+  letter-spacing: 0.5px;
+
+  @include mobile {
+    font-size: 0.9rem;
+  }
+}
+
+.roomPin {
+  font-family: $font-hud;
+  font-size: 0.72rem;
+  color: $matrix-green;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.statsBar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+
+  @include mobile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 8px;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 80px;
+
+  @include mobile {
+    min-width: unset;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.statLabel {
+  font-family: $font-hud;
+  font-size: 0.68rem;
+  color: $text-secondary;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.statValue {
+  font-family: $font-hud;
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.progressBar {
+  width: 100%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.progressFill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.progressHp {
+  background: linear-gradient(90deg, $emerald-dark, $emerald-glow);
+}
+
+.progressSanity {
+  background: linear-gradient(90deg, $crimson-dark, $crimson-glow);
+}
+
+.equippedMask {
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  color: $purple-glow;
+  font-family: $font-hud;
+  font-size: 0.75rem;
+
+  @include mobile {
+    grid-column: span 3;
+    text-align: center;
+  }
+}
+
+.characterBadge {
+  font-family: $font-hud;
+  font-size: 0.65rem;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-left: 6px;
+  display: inline-block;
+}
+
+.playerBadge {
+  background: rgba(14, 165, 233, 0.2);
+  border: 1px solid rgba(14, 165, 233, 0.4);
+  color: #38bdf8;
+}
+
+.npcBadge {
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+}
+
+.masterControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @include mobile {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.masterSelect {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  border-radius: 4px;
+  padding: 6px 10px;
+  color: $text-primary;
+  font-family: $font-hud;
+  font-size: 0.78rem;
+  outline: none;
+  cursor: pointer;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.viewToggleBtn {
+  @include hud-button($matrix-green, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.4));
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 4px;
+
+  @include mobile {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.actionsGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @include mobile {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.iconBtn {
+  @include hud-button($steel-light, rgba(30, 41, 59, 0.6), $border-dark);
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  min-height: 38px;
+
+  @include mobile {
+    flex: 1;
+    padding: 8px 6px;
+    font-size: 0.75rem;
+  }
+}

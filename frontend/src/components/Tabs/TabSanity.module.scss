@@ -1,0 +1,119 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.tabContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.sanityMonitorPanel {
+  @include hud-panel(rgba(244, 63, 94, 0.4), $bg-panel);
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sanityTitle {
+  font-family: $font-hud;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #f43f5e;
+}
+
+.sanityDisplay {
+  font-family: $font-hud;
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #f43f5e;
+  text-shadow: 0 0 15px rgba(244, 63, 94, 0.5);
+}
+
+.drainRateBadge {
+  font-family: $font-hud;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background: rgba(244, 63, 94, 0.15);
+  border: 1px solid rgba(244, 63, 94, 0.4);
+  color: #f43f5e;
+  font-size: 0.88rem;
+}
+
+.debuffsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.debuffCard {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(244, 63, 94, 0.3);
+  border-left: 4px solid #f43f5e;
+  border-radius: 4px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+.debuffInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.debuffName {
+  font-family: $font-hud;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: $text-primary;
+}
+
+.debuffDrain {
+  font-family: $font-hud;
+  font-size: 0.85rem;
+  color: #f43f5e;
+}
+
+.debuffReason {
+  font-size: 0.8rem;
+  color: $text-secondary;
+}
+
+.recoveryRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.recovBtn {
+  @include hud-button($matrix-green, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.4));
+  padding: 12px;
+  font-size: 0.88rem;
+  width: 100%;
+}

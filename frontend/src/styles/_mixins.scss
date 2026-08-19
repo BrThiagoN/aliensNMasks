@@ -1,0 +1,75 @@
+@use 'variables' as *;
+
+@mixin hud-panel($border-color: $border-hud, $bg: $bg-panel) {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.2) 100%), $bg;
+  border: 1px solid $border-color;
+  border-top: 1px solid rgba(226, 232, 240, 0.15); // Metallic top bevel
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+@mixin hud-button($color: $steel-light, $bg: rgba(30, 41, 59, 0.6), $border: rgba(148, 163, 184, 0.3)) {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(0, 0, 0, 0.2) 100%), $bg;
+  color: $color;
+  border: 1px solid $border;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); // Metallic bevel button
+  border-radius: 4px;
+  padding: 10px 16px;
+  min-height: 44px;
+  font-family: $font-hud;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(180deg, rgba(16, 185, 129, 0.15) 0%, rgba(2, 44, 34, 0.4) 100%);
+    border-color: $matrix-green;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(1px);
+    opacity: 0.9;
+  }
+
+  &:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin small-mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 769px) {
+    @content;
+  }
+}

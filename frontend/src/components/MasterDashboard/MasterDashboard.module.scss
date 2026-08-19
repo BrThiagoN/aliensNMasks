@@ -1,0 +1,356 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.topBar {
+  @include flex-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+}
+
+.headerTitle {
+  font-family: $font-hud;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: $text-primary;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.createNpcBtn {
+  @include hud-button($matrix-green, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.5));
+  padding: 10px 16px;
+  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.sectionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 6px;
+}
+
+.sectionTitle {
+  font-family: $font-hud;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.agentsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.agentCard {
+  @include hud-panel($border-hud, $bg-panel);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: rgba(16, 185, 129, 0.4);
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+  }
+}
+
+.agentHeader {
+  @include flex-between;
+  gap: 8px;
+}
+
+.agentNameBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.agentName {
+  font-family: $font-hud;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: $text-primary;
+}
+
+.agentSpec {
+  font-size: 0.75rem;
+  color: $steel-mid;
+}
+
+.badgeGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.playerBadge {
+  font-family: $font-hud;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(14, 165, 233, 0.15);
+  border: 1px solid rgba(14, 165, 233, 0.4);
+  color: #38bdf8;
+}
+
+.npcBadge {
+  font-family: $font-hud;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+}
+
+.statusRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  font-family: $font-hud;
+  font-size: 0.82rem;
+}
+
+.cardActionGroup {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.playCardBtn {
+  @include hud-button($matrix-green, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.4));
+  padding: 8px 10px;
+  font-size: 0.78rem;
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: 4px;
+}
+
+.debuffCardBtn {
+  @include hud-button(#f43f5e, rgba(244, 63, 94, 0.15), rgba(244, 63, 94, 0.4));
+  padding: 8px 10px;
+  font-size: 0.78rem;
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: 4px;
+}
+
+.deleteCardBtn {
+  background: transparent;
+  border: 1px solid rgba(244, 63, 94, 0.3);
+  color: #f43f5e;
+  padding: 8px;
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(244, 63, 94, 0.2);
+  }
+}
+
+.nucleiCalculatorCard {
+  @include hud-panel(rgba(148, 163, 184, 0.3), $bg-panel);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.calcGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  width: 100%;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.label {
+  font-family: $font-hud;
+  font-size: 0.78rem;
+  color: $steel-mid;
+}
+
+.input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid $steel-border;
+  border-radius: 4px;
+  padding: 10px;
+  color: $text-primary;
+  font-family: $font-hud;
+  box-sizing: border-box;
+}
+
+.checkboxGroup {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: $text-secondary;
+  cursor: pointer;
+}
+
+.distributeBtn {
+  @include hud-button($matrix-green, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.4));
+  padding: 12px;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+// Modal styles
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.modalCard {
+  @include hud-panel(rgba(16, 185, 129, 0.4), $bg-panel);
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modalHeader {
+  @include flex-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+
+.modalTitle {
+  font-family: $font-hud;
+  font-size: 1.15rem;
+  color: $matrix-green;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.select {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid $steel-border;
+  border-radius: 4px;
+  padding: 10px;
+  color: $text-primary;
+  font-family: $font-hud;
+  box-sizing: border-box;
+}
+
+.formGrid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formGrid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+
+  @include mobile {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.formSectionTitle {
+  font-family: $font-hud;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #38bdf8;
+  margin-top: 6px;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+  padding-bottom: 4px;
+}

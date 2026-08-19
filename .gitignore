@@ -1,0 +1,32 @@
+# Secret Tokens, Keys & Environment Variables
+.env
+.env.*
+!.env.example
+*.env
+*.pem
+*.key
+*.token
+credentials.json
+token.json
+
+# Local system & scripts
+bot
+login-notebooklm.bat
+*.log
+
+# Dependencies & Build artifacts
+node_modules/
+dist/
+build/
+.output/
+.vercel/
+
+# IDE & OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.suo
+*.user
+
+tabelas.md

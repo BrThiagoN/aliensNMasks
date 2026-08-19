@@ -1,0 +1,122 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.tabContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.paCounterPanel {
+  @include hud-panel($border-hud, $bg-panel);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.paTitle {
+  font-family: $font-hud;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: $text-primary;
+  letter-spacing: 0.5px;
+}
+
+.paCrystalsGrid {
+  display: flex;
+  gap: 16px;
+  margin: 6px 0;
+}
+
+.crystalSlot {
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+  background: #080b0e;
+  border: 1px solid $steel-border;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-hud;
+  font-size: 1.5rem;
+  color: $text-muted;
+  transition: all 0.25s ease;
+
+  &.active {
+    background: radial-gradient(circle, #059669 0%, #022c22 100%);
+    border-color: $matrix-green;
+    color: #ecfdf5;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+    transform: scale(1.05);
+  }
+}
+
+.quickActionsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.actionBtnCard {
+  @include hud-panel($border-hud, $bg-panel);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+
+  &:hover {
+    border-color: rgba(16, 185, 129, 0.35);
+  }
+}
+
+.actionHeader {
+  @include flex-between;
+  width: 100%;
+}
+
+.actionName {
+  font-family: $font-hud;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: $text-primary;
+}
+
+.paCostBadge {
+  font-family: $font-hud;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: rgba(16, 185, 129, 0.15);
+  color: $matrix-green;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.actionDesc {
+  font-family: $font-sans;
+  font-size: 0.85rem;
+  color: $text-secondary;
+  line-height: 1.4;
+}
+
+.spendBtn {
+  @include hud-button($steel-light, rgba(30, 41, 59, 0.5), rgba(148, 163, 184, 0.3));
+  width: 100%;
+  margin-top: auto;
+  font-size: 0.8rem;
+}
+
+.resetTurnBtn {
+  @include hud-button($matrix-green, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.4));
+  padding: 12px 24px;
+  font-size: 0.9rem;
+}
